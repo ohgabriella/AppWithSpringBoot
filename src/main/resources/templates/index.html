@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Spring Boot</title>
+<style>
+h3 {
+	color: green;
+	margin-left: 20px;
+}
+</style>
+</head>
+<body>
+	<h1>Lista de Eventos</h1>
+
+	<h3>
+		<a href="cadastrarEvento">Cadastrar Evento</a>
+	</h3>
+
+	<div th:each="evento : ${eventos}">
+		<div class="row">
+			<p>
+				<span th:text="${evento.nome}"></span>
+			</p>
+			<p>
+				<span th:text="${evento.local}"></span>
+			</p>
+			<p>
+				<span th:text="${evento.data}"></span>
+			</p>
+			<p>
+				<span th:text="${evento.horario}"></span>
+			</p>
+
+		</div>
+
+	</div>
+	<p></p>
+</body>
+</html>

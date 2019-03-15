@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>EventosApp</title>
+
+<style type="text/css">
+label {
+	padding: 10px;
+}
+
+input {
+	margin: 5px;
+}
+</style>
+</head>
+<body>
+	<h1>Cadastro de eventos</h1>
+	<form method="post">
+		<div>
+			<label>Nome:</label> <input type="text" value="" name="nome" />
+		</div>
+		<div>
+			<label>Local:</label> <input type="text" value="" name="local" />
+		</div>
+		<div>
+			<label>Data:</label> <input type="date" value="" name="data" />
+		</div>
+		<div>
+			<label>Horario:</label> <input type="text" value="" name="horario" />
+		</div>
+		<button type="submit">Salvar</button>
+	</form>
+
+
+</body>
+</html>
