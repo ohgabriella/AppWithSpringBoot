@@ -11,11 +11,29 @@
 <body>
 	<h1>Lista de Eventos</h1>
 
-	<h3>
-		<a href="/cadastrarEvento"><i class="fa fa-plus-circle"></i>Cadastrar
-			Evento</a>
-	</h3>
-	
+	<a href="/evento"><i class="fa fa-plus-circle"></i>Listar
+		Eventos</a>
+		
+	<div th:each="evento: ${evento}" class="container">
+		<div class="">
+			<p>
+				<span th:text="${evento.nome}"></span>
+			</p>
+			<p>
+				<span th:text="${evento.local}"></span>
+			</p>
+			<p>
+				<span th:text="${evento.data}"></span>
+			</p>
+			<p>
+				<span th:text="${evento.horario}"></span>
+			</p>
+		</div>
+	</div>
+
+
+
+
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

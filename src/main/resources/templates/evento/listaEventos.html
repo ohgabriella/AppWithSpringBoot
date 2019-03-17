@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-</head>
+</head>	
 <body>
 	<h1>Lista de Eventos</h1>
 
@@ -15,7 +15,29 @@
 		<a href="/cadastrarEvento"><i class="fa fa-plus-circle"></i>Cadastrar
 			Evento</a>
 	</h3>
-	
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Codigo</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Local</th>
+				<th scope="col">Data</th>
+				<th scope="col">Horario</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="evento : ${eventos}">
+				<td><span th:text="${evento.codigo}"></span></td>
+				<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>			
+				<td><span th:text="${evento.local}"></span></td>
+				<td><span th:text="${evento.data}"></span></td>
+				<td><span th:text="${evento.horario}"></span></td>
+			</tr>
+		</tbody>
+
+	</table>
+
+
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
