@@ -11,10 +11,12 @@
 <body>
 	<h1>Lista de Eventos</h1>
 
-	<a href="/evento"><i class="fa fa-plus-circle"></i>Listar
-		Eventos</a>
-		
-	<div th:each="evento: ${evento}" class="container">
+	<button class="btn btn-info">
+		<a class="text-white" href="/eventos"><i class="fa fa-plus-circle"></i>Listar
+			Eventos</a><br />
+	</button>
+<div class="container">
+	<div th:each="evento: ${evento}">
 		<div class="">
 			<p>
 				<span th:text="${evento.nome}"></span>
@@ -31,7 +33,14 @@
 		</div>
 	</div>
 
+	<form method="post">
+		<label>Nome </label><input type="text" value="" name="nomeConvidado" />
+		<label>Rg </label><input type="text" value="" name="rg" />
+		<button class="btn btn-info" type="submit">Salvar</button>
+	</form>
 
+
+</div>
 
 
 	<script src="bootstrap/js/bootstrap.min.js"></script>
