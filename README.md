@@ -4,7 +4,7 @@
 
 Nesse projeto criei um sistema de cadastramento de eventos em Java que utiliza o framework Spring Boot.
 
-##Uso
+## Uso
 
 1. Clone o repositório;
 2. Importe o projeto como "projeto maven" no Spring Boot;
