@@ -9,38 +9,54 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 <body>
-	<h1>Lista de Eventos</h1>
+	<div class="container">
+		<h1>Lista de Eventos</h1>
 
-	<button class="btn btn-info">
-		<a class="text-white" href="/eventos"><i class="fa fa-plus-circle"></i>Listar
-			Eventos</a><br />
-	</button>
-<div class="container">
-	<div th:each="evento: ${evento}">
-		<div class="">
-			<p>
-				<span th:text="${evento.nome}"></span>
-			</p>
-			<p>
-				<span th:text="${evento.local}"></span>
-			</p>
-			<p>
-				<span th:text="${evento.data}"></span>
-			</p>
-			<p>
-				<span th:text="${evento.horario}"></span>
-			</p>
+		<button class="btn btn-info">
+			<a class="text-white espaco" href="/eventos">Listar Eventos</a>
+		</button>
+
+		<div th:each="evento: ${evento}">
+			<div class="">
+				<p>
+					<span th:text="${evento.nome}"></span>
+				</p>
+				<p>
+					<span th:text="${evento.local}"></span>
+				</p>
+				<p>
+					<span th:text="${evento.data}"></span>
+				</p>
+				<p>
+					<span th:text="${evento.horario}"></span>
+				</p>
+			</div>
 		</div>
+
+		<form method="post">
+			<label>Nome </label><input type="text" value="" name="nomeConvidado" />
+			<label>Rg </label><input type="text" value="" name="rg" />
+			<button class="btn btn-info" type="submit">Salvar</button>
+		</form>
+
+		<h5>Lista de convidados</h5>
+		<div class="" th:each="convidado : ${convidados}">
+			<div class="row">
+				<div class="col-6">
+					<p>
+						<span th:text="${convidado.nomeConvidado}"></span>
+					</p>
+				</div>
+				<div class="col-3">
+					<p>
+						<span th:text="${convidado.rg}"></span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+
 	</div>
-
-	<form method="post">
-		<label>Nome </label><input type="text" value="" name="nomeConvidado" />
-		<label>Rg </label><input type="text" value="" name="rg" />
-		<button class="btn btn-info" type="submit">Salvar</button>
-	</form>
-
-
-</div>
 
 
 	<script src="bootstrap/js/bootstrap.min.js"></script>

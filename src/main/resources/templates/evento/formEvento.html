@@ -2,52 +2,41 @@
 <html xmlns:th="https://www.thymeleaf.org"
 	xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="ISO-8859-1"></meta>
+<meta charset="utf-8"></meta>
 <title>EventosApp</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-<style type="text/css">
-label {
-	padding: 10px;
-}
-
-input {
-	margin: 5px;
-}
-</style>
+<link rel="stylesheet" href="bootstrap/css/meucss.css"></link>
 </head>
 <body>
-	<h1>Cadastro de eventos</h1>
-	<button class="btn btn-info">
-		<a class="text-white" href="/eventos"><i class="fa fa-plus-circle"></i>Listar
-			Eventos</a>
-	</button>
 
+	<div class="container top-all">
 
-	<form method="post">
-		<div class="container">
-			<div class="row">
-				<div class="col-6">
-					<label>Nome:</label> <input type="text" value="" name="nome" />
-				</div>
+		<h1 class="text-center fontHead">Cadastro de eventos</h1>
+		<a class="text-white btn btn-info espaco" href="/eventos">Listar Eventos</a>
 
-				<div class="col-6">
-					<label>Local:</label> <input type="text" value="" name="local" />
-				</div>
+		<form method="post">
+
+			<div class="form-group">
+				<label>Nome:</label> <input class="form-control" type="text" value="" name="nome" />
+			</div>
+
+			<div class="form-group">
+				<label>Local:</label> <input class="form-control" type="text" value="" name="local" />
+
 			</div>
 			<div class="row">
-				<div class="col-6">
-					<label>Data:</label> <input type="date" value="" name="data" />
+				<div class="form-group col-md-6">
+					<label>Data:</label> <input class="form-control" type="date" value="" name="data" />
 				</div>
-				<div class="col-6">
-					<label>Horario:</label> <input type="text" value="" name="horario" />
+				<div class="form-group col-md-6">
+					<label>Horario:</label> <input class="form-control" type="text" value="" name="horario" />
 				</div>
 			</div>
 			<button class="btn btn-info" type="submit">Salvar</button>
-		</div>
-	</form>
 
-
+		</form>
+	</div>
 </body>
 </html>

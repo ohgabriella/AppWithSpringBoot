@@ -18,6 +18,6 @@ Os frameworks utilizados nesse projeto foram:
 
 ## Observações
 
-Depois de dar o "run" na aplicação, o projeto roda no localhost:8000.
-Como foi implementado o devtools não precisa startar novamente o projeto todas as vezes que realizar modificações.  
+Depois de dar o "run" na aplicação o projeto roda no localhost:8080, por default.
+Como foi implementado o devtools não precisa startar novamente o projeto todas as vezes que realizar modificações, basta salvar e ver suas modificações na tela.  
  

@@ -2,26 +2,31 @@
 <html xmlns:th="https://www.thymeleaf.org"
 	xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="ISO-8859-1"></meta>
+<meta charset="utf-8"></meta>
 <title>Spring Boot</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="bootstrap/css/meucss.css"></link>
+
 </head>
+
 <body>
-	<h1 class="">Lista de Eventos</h1>
+	<div class="text-center text-top">
+		<div class="container">
+			<h1 class="fontHead">App Eventos</h1>
 
+			<p class="lead text-muted">
+				Esta é uma aplicação que realiza o cadastramento de eventos.<br />
+				Escolha a opção que desejar.
+			</p>
 
-	<button class="btn btn-info"><a class= "text-white" href="/cadastrarEvento"><i class="fa fa-plus-circle"></i>Cadastrar
-		Evento</a><br/></button>
+			<a class="text-white btn btn-info my-2" href="/cadastrarEvento">Cadastrar
+				Evento</a> <a class="text-white btn btn-secondary my-2" href="/eventos">Listar
+				Eventos</a>
 
-	<button class="btn btn-info text-white"><a class= "text-white" href="/eventos"><i class="fa fa-plus-circle"></i>Listar
-		Eventos</a></button>
-
-
-
-
-
+		</div>
+	</div>
 
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
