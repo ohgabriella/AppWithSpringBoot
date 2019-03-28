@@ -14,24 +14,30 @@
 	<div class="container top-all">
 
 		<h1 class="text-center fontHead">Cadastro de eventos</h1>
-		<a class="text-white btn btn-info espaco" href="/eventos">Listar Eventos</a>
+		<a class="text-white btn btn-info espaco" href="/eventos">Listar
+			Eventos</a>
+		<th:block th:include="mensagemValidacao"></th:block>
 
 		<form method="post">
 
 			<div class="form-group">
-				<label>Nome:</label> <input class="form-control" type="text" value="" name="nome" />
+				<label>Nome </label> <input class="form-control" type="text"
+					value="" name="nome" />
 			</div>
 
 			<div class="form-group">
-				<label>Local:</label> <input class="form-control" type="text" value="" name="local" />
+				<label>Local </label> <input class="form-control" type="text"
+					value="" name="local" />
 
 			</div>
 			<div class="row">
 				<div class="form-group col-md-6">
-					<label>Data:</label> <input class="form-control" type="date" value="" name="data" />
+					<label>Data </label> <input class="form-control" type="text"
+						value="" name="data" />
 				</div>
 				<div class="form-group col-md-6">
-					<label>Horario:</label> <input class="form-control" type="text" value="" name="horario" />
+					<label>Horario </label> <input class="form-control" type="text"
+						value="" name="horario" />
 				</div>
 			</div>
 			<button class="btn btn-info" type="submit">Salvar</button>

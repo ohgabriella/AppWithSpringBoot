@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Generated;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "evento")
@@ -25,11 +26,16 @@ public class Evento implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long codigo;
-
+	
+	@NotEmpty
 	private String nome;
+	@NotEmpty
 	private String local;
+	@NotEmpty
 	private String data;
-
+	@NotEmpty
+	private String horario;
+	
 	@OneToMany
 	private List<Convidado> Convidados;
 
@@ -40,8 +46,6 @@ public class Evento implements Serializable {
 	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
-
-	private String horario;
 
 	public String getNome() {
 		return nome;

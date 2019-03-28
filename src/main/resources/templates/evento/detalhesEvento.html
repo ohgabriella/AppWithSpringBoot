@@ -33,11 +33,20 @@
 			</div>
 		</div>
 
-		<form method="post">
-			<label>Nome </label><input type="text" value="" name="nomeConvidado" />
-			<label>Rg </label><input type="text" value="" name="rg" />
+		<th:block th:include="mensagemValidacao"></th:block>
+
+		<form method="post" th:object="${convidado}">
+			<div class="form-group">
+				<label>Nome </label><input class="form-control" type="text" value=""
+					name="nomeConvidado" />
+			</div>
+			<div class="form-group">
+				<label>Rg </label><input class="form-control" type="text" value=""
+					name="rg" />
+			</div>
 			<button class="btn btn-info" type="submit">Salvar</button>
 		</form>
+
 
 		<h5>Lista de convidados</h5>
 		<div class="" th:each="convidado : ${convidados}">
