@@ -13,29 +13,33 @@
 		<h1>Lista de Eventos</h1>
 
 		<button class="btn btn-info">
-			<a class="text-white espaco" href="/cadastrarEvento">Cadastrar Evento</a>
+			<a class="text-white espaco" href="/cadastrarEvento">Cadastrar
+				Evento</a>
 		</button>
 
 
 		<table class="table">
 			<thead class="">
 				<tr>
-					<th scope="col">Codigo</th>
 					<th scope="col">Nome</th>
 					<th scope="col">Local</th>
 					<th scope="col">Data</th>
 					<th scope="col">Horario</th>
+					<th scope="col">Deletar</th>
+
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="evento : ${eventos}">
-					<td><span th:text="${evento.codigo}"></span></td>
 					<td><a
 						th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span
 							th:text="${evento.nome}"></span></a></td>
 					<td><span th:text="${evento.local}"></span></td>
 					<td><span th:text="${evento.data}"></span></td>
 					<td><span th:text="${evento.horario}"></span></td>
+					<td><a class="btn btn-small"
+						th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}"></a></td>
+
 				</tr>
 			</tbody>
 

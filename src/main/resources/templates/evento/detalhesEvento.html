@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org"
 	xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="ISO-8859-1"></meta>
+<meta charset="utf-8"></meta>
 <title>Spring Boot</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet"
@@ -10,25 +10,25 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Lista de Eventos</h1>
-
 		<button class="btn btn-info">
 			<a class="text-white espaco" href="/eventos">Listar Eventos</a>
 		</button>
 
 		<div th:each="evento: ${evento}">
+			<h5>Detalhes do Evento</h5>
+
 			<div class="">
 				<p>
-					<span th:text="${evento.nome}"></span>
+					Nome: <span th:text="${evento.nome}"></span>
 				</p>
 				<p>
-					<span th:text="${evento.local}"></span>
+					Local: <span th:text="${evento.local}"></span>
 				</p>
 				<p>
-					<span th:text="${evento.data}"></span>
+					Data: <span th:text="${evento.data}"></span>
 				</p>
 				<p>
-					<span th:text="${evento.horario}"></span>
+					Horário: <span th:text="${evento.horario}"></span>
 				</p>
 			</div>
 		</div>
@@ -48,22 +48,23 @@
 		</form>
 
 
-		<h5>Lista de convidados</h5>
-		<div class="" th:each="convidado : ${convidados}">
-			<div class="row">
-				<div class="col-6">
-					<p>
-						<span th:text="${convidado.nomeConvidado}"></span>
-					</p>
-				</div>
-				<div class="col-3">
-					<p>
-						<span th:text="${convidado.rg}"></span>
-					</p>
-				</div>
-			</div>
-		</div>
-
+		<table>
+			<thead>
+				<tr>
+					<th>Nome Convidado</th>
+					<th>RG</th>
+					<th>Deletar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="" th:each="convidado : ${convidados}">
+					<td><span th:text="${convidado.nomeConvidado}"></span></td>
+					<td><span th:text="${convidado.rg}"></span></td>
+					<td><a class="btn btn-info"
+						th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}">Deletar</a></td>
+				</tr>
+			</tbody>
+		</table>
 
 	</div>
 
