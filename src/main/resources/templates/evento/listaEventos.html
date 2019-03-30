@@ -7,16 +7,14 @@
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="bootstrap/css/meucss.css"></link>
+
 </head>
 <body>
-	<div class="container">
-		<h1>Lista de Eventos</h1>
+	<th:block th:include="nav"></th:block>
 
-		<button class="btn btn-info">
-			<a class="text-white espaco" href="/cadastrarEvento">Cadastrar
-				Evento</a>
-		</button>
-
+	<div class="container top-all">
+		<h1 class="text-center fontHead">Lista de Eventos</h1>
 
 		<table class="table">
 			<thead class="">

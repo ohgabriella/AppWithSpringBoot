@@ -7,48 +7,49 @@
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="bootstrap/css/meucss.css"></link>
+
 </head>
 <body>
-	<div class="container">
-		<button class="btn btn-info">
-			<a class="text-white espaco" href="/eventos">Listar Eventos</a>
-		</button>
+	<th:block th:include="nav"></th:block>
+
+	<div class="container top-all">
+		<h2 class="fontSmall">Detalhes do Evento</h2>
 
 		<div th:each="evento: ${evento}">
-			<h5>Detalhes do Evento</h5>
 
-			<div class="">
+			<div class="text-center espacoDetalhe">
 				<p>
-					Nome: <span th:text="${evento.nome}"></span>
+					<label>Nome:</label> <span th:text="${evento.nome}"></span>
 				</p>
 				<p>
-					Local: <span th:text="${evento.local}"></span>
+					<label>Local:</label> <span th:text="${evento.local}"></span>
 				</p>
 				<p>
-					Data: <span th:text="${evento.data}"></span>
+					<label>Data:</label> <span th:text="${evento.data}"></span>
 				</p>
 				<p>
-					Horário: <span th:text="${evento.horario}"></span>
+					<label>Horário:</label> <span th:text="${evento.horario}"></span>
 				</p>
 			</div>
 		</div>
 
 		<th:block th:include="mensagemValidacao"></th:block>
 
-		<form method="post" th:object="${convidado}">
+		<h4 class="fontSmall">Convidados</h4>
+		<form class="espacoDetalhe" method="post" th:object="${convidado}">
 			<div class="form-group">
 				<label>Nome </label><input class="form-control" type="text" value=""
 					name="nomeConvidado" />
 			</div>
 			<div class="form-group">
-				<label>Rg </label><input class="form-control" type="text" value=""
+				<label>Rg</label><input class="form-control" type="text" value=""
 					name="rg" />
 			</div>
 			<button class="btn btn-info" type="submit">Salvar</button>
 		</form>
 
-
-		<table>
+		<table class="table">
 			<thead>
 				<tr>
 					<th>Nome Convidado</th>

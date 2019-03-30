@@ -8,14 +8,14 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="bootstrap/css/meucss.css"></link>
+
 </head>
 <body>
+	<th:block th:include="nav"></th:block>
 
 	<div class="container top-all">
 
 		<h1 class="text-center fontHead">Cadastro de eventos</h1>
-		<a class="text-white btn btn-info espaco" href="/eventos">Listar
-			Eventos</a>
 		<th:block th:include="mensagemValidacao"></th:block>
 
 		<form method="post">
