@@ -1,0 +1,20 @@
+@Bean
+	public DataSource dataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mariadb://localhost:3306/eventosapp");
+		dataSource.setUsername("root");
+		dataSource.setPassword("");
+		return dataSource;
+	}
+
+	@Bean
+	public JpaVendorAdapter jpaVendorAdapter() {
+		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
+		adapter.setDatabase(Database.DB2);
+		adapter.setShowSql(true);
+		adapter.setGenerateDdl(true);
+		adapter.setDatabasePlatform("org.hibernate.dialect.MariaDBDialect");
+		adapter.setPrepareConnection(true);
+		return adapter;
+	}
