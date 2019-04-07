@@ -15,34 +15,34 @@
 
 	<div class="container top-all">
 		<h1 class="text-center fontHead">Lista de Eventos</h1>
+		<div class="table-responsive">
+			<table class="table">
+				<thead class="">
+					<tr>
+						<th scope="col">Nome</th>
+						<th scope="col">Local</th>
+						<th scope="col">Data</th>
+						<th scope="col">Horario</th>
+						<th scope="col">Deletar</th>
 
-		<table class="table">
-			<thead class="">
-				<tr>
-					<th scope="col">Nome</th>
-					<th scope="col">Local</th>
-					<th scope="col">Data</th>
-					<th scope="col">Horario</th>
-					<th scope="col">Deletar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="evento : ${eventos}">
+						<td><a
+							th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span
+								th:text="${evento.nome}"></span></a></td>
+						<td><span th:text="${evento.local}"></span></td>
+						<td><span th:text="${evento.data}"></span></td>
+						<td><span th:text="${evento.horario}"></span></td>
+						<td><a class="btn btn-info"
+							th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}">Deletar</a></td>
 
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="evento : ${eventos}">
-					<td><a
-						th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span
-							th:text="${evento.nome}"></span></a></td>
-					<td><span th:text="${evento.local}"></span></td>
-					<td><span th:text="${evento.data}"></span></td>
-					<td><span th:text="${evento.horario}"></span></td>
-					<td><a class="btn btn-info"
-						th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}">Deletar</a></td>
+					</tr>
+				</tbody>
 
-				</tr>
-			</tbody>
-
-		</table>
-
+			</table>
+		</div>
 	</div>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
